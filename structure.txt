@@ -1,0 +1,16 @@
+
+
+1. Testcases folder
+2. locators and Methods in Pages Folder
+3. TestData in TestDataFolder
+4. CommonUtitlites
+
+
+
+username: trainingplaywright@gmail.com
+pw: Welcome@04
+
+
+
+Debug: set PWDEBUG=1
+page.pause()
