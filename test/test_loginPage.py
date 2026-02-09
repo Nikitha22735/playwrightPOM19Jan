@@ -5,7 +5,7 @@ import pytest
 
 
 
-
+@pytest.mark.single1()
 def test_lognUsingValidCredentials(page, navigateToEmailAddressPage):
     homePageObj = homePage(page)
     logInPageObj = logInPage(page)
@@ -15,7 +15,7 @@ def test_lognUsingValidCredentials(page, navigateToEmailAddressPage):
     logInPageObj.clickOnSignInbtn()
 
 
-
+@pytest.mark.single1()
 def test_lognUsingInValidCredentials(page, navigateToEmailAddressPage):
     homePageObj = homePage(page)
     logInPageObj = logInPage(page)

@@ -2,6 +2,7 @@ from playwright.sync_api import Page,expect
 
 class homePage():
     def __init__(self, page:Page):
+        self.page = page
         self.searchboxLocator = page.get_by_placeholder("Search Amazon.in")
         self.cartBtn = page.locator(".nav-cart-icon.nav-sprite")
         self.accountBtn = page.locator("//span[contains(text(),'Account & Lists')]")
@@ -26,6 +27,7 @@ class homePage():
         expect(self.ordersBtn).to_be_visible()
 
     def clickOnSignInBtn(self):
+        self.page.wait_for_timeout(3000)
         self.accountBtn.hover()
         self.signInBtn.click()
 

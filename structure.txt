@@ -14,3 +14,30 @@ pw: Welcome@04
 
 Debug: set PWDEBUG=1
 page.pause()
+
+
+
+with playwrighr.sync_api as p:
+    browser = p.chroimium.launch()
+    context = browser.new_context()
+    page = page.new_context()
+    pagw.goto(url)
+
+
+
+  lambda title:  //h2[@aria-label='{title}']//ancestor::div[@data-cy='title-recipe']//following-sibling::div[@class='puisg-row puis-desktop-list-row']//button[text()='Add to cart']
+
+
+  def sum(a,b):
+    return a+b
+
+c = lambda a,b:a+b
+
+
+
+git commands:
+1. git branch creation
+2. git stash
+3. git pull
+4. git stash pop
+
