@@ -12,4 +12,5 @@ def test_validateTheResults(page: Page, loginToAmazon):
     homePageObj.enterProductToSearch("iphone")
     homePageObj.clickOnSearchBtn()
     resultsPageObj.validateTheVisibilityOfResults()
+    
 

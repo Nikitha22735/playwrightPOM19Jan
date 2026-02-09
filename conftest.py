@@ -6,7 +6,7 @@ from pages.loginPage import logInPage
 from pages.resultsPage import resultsPage
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture()
 def navigateToEmailAddressPage(page):
     page.goto("https://www.amazon.in/")
     homePageObj = homePage(page)
