@@ -41,5 +41,3 @@ git commands:
 3. git pull
 4. git stash pop
 
-5.
-
