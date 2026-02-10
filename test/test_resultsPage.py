@@ -6,10 +6,19 @@ import pytest
 
 
 @pytest.mark.single()
-def test_validateTheResults(page: Page, loginToAmazon):
-    homePageObj = homePage(page)
+def test_validateTheResults(page: Page, loginToAmazon, homePageObj):
+    # homePageObj = homePage(page)
     resultsPageObj = resultsPage(page)
     homePageObj.enterProductToSearch("iphone")
+    homePageObj.clickOnSearchBtn()
+    resultsPageObj.validateTheVisibilityOfResults()
+
+
+@pytest.mark.single()
+def test_validateTheResults_samsung(page: Page, loginToAmazon, homePageObj):
+    # homePageObj = homePage(page)
+    resultsPageObj = resultsPage(page)
+    homePageObj.enterProductToSearch("samsung")
     homePageObj.clickOnSearchBtn()
     resultsPageObj.validateTheVisibilityOfResults()
     

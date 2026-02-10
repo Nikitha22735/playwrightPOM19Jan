@@ -14,14 +14,44 @@ def navigateToEmailAddressPage(page):
     yield
     # yield page
 
-@pytest.fixture()
+import json
+
+@pytest.fixture(scope="module")
 def loginToAmazon(page:Page):
     page.goto("https://www.amazon.in/")
     homePageObj = homePage(page)
     logInPageObj = logInPage(page)
     page.wait_for_timeout(3000)
     homePageObj.clickOnSignInBtn()
-    logInPageObj.enterEmailAddress("trainingplaywright@gmail.com")
+    with open("testData/credentials.json") as data:
+        testData = json.load(data)
+    # logInPageObj.enterEmailAddress("trainingplaywright@gmail.com")
+    logInPageObj.enterEmailAddress(testData["positiveCredentials"]["username"])
     logInPageObj.clickOnContinueBtn()
-    logInPageObj.enterPassword("Welcome@04")
+    logInPageObj.enterPassword(testData["positiveCredentials"]["password"])
     logInPageObj.clickOnSignInbtn()
+
+#  homePageObj = homePage(page)
+@pytest.fixture()
+def homePageObj(page):
+    homePageObj = homePage(page)
+    return homePageObj
+
+
+@pytest.fixture()
+def resultsPageObj(page):
+    resultsPageObj = resultsPage(page)
+    return resultsPageObj
+
+
+@pytest.fixture(scope="module")
+def page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless = False)
+        context = browser.new_context()
+        page = context.new_page()
+        yield page       #pausing point
+        # page.close()
+
+
+
