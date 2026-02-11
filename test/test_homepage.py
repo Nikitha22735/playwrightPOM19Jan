@@ -11,4 +11,6 @@ def test_validateUIOfAmazonHomePage(page: Page, loginToAmazon):
     homePageObj.validateTheVisibilityOfCart()
     homePageObj.validateTheVisibilityOfAccountsAndList()
     homePageObj.validateTheVisibilityOfOrders()
+
+
     

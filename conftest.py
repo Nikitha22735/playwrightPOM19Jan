@@ -1,4 +1,5 @@
 import pytest
+import json
 from playwright.sync_api import expect, Page, sync_playwright
 
 from pages.homeaPage import homePage
@@ -14,7 +15,7 @@ def navigateToEmailAddressPage(page):
     yield
     # yield page
 
-import json
+
 
 @pytest.fixture(scope="module")
 def loginToAmazon(page:Page):
