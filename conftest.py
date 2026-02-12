@@ -1,6 +1,7 @@
 import pytest
 import json
 from playwright.sync_api import expect, Page, sync_playwright
+import allure
 
 from pages.homeaPage import homePage
 from pages.loginPage import logInPage
@@ -53,6 +54,26 @@ def page():
         page = context.new_page()
         yield page       #pausing point
         # page.close()
+
+
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    # Capture screenshots for setup, call, and teardown failures
+    if report.failed:
+        page = item.funcargs.get("page", None)
+        if page:
+            step = report.when  # setup / call / teardown
+            screenshot = page.screenshot()
+            allure.attach(
+                screenshot,
+                name=f"Failure Screenshot ({step})",
+                attachment_type=allure.attachment_type.PNG
+            )
 
 
 

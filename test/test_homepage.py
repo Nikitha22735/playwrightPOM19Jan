@@ -1,6 +1,7 @@
 from playwright.sync_api import expect, Page
 from pages.homeaPage import homePage
 import pytest
+# from allureWraper import BasePage
 
 @pytest.mark.single34()
 def test_validateUIOfAmazonHomePage(page: Page, loginToAmazon):
