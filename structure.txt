@@ -49,3 +49,25 @@ fixture:
 before and after Testcases
 
 
+
+
+
+ENV:
+
+dev:
+url- wwwdev.amazon.com
+username- testingindev@gmail.com
+pw- testingDev
+
+
+test:
+url- wwwTest.amazon.com
+username- testinginTest@gmail.com
+pw- testingTest
+
+
+
+Reports:
+
+1. HTML
+2. ALLURE

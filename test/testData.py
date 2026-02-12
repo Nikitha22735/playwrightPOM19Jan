@@ -2,6 +2,7 @@ from utils.jsonReading import jsonData
 from utils.csvReading import csvData, writeCSVData
 import csv
 import os
+import pytest
 
 def test_grabData():
     print(jsonData("testData\\credentials.json"))
@@ -29,6 +30,19 @@ def test_grabFromCommandLine():
     passwordValue = os.getenv("password")
     print(usernameValue)
     print(passwordValue)
+
+
+from dotenv import load_dotenv
+@pytest.mark.data()
+def test_grabFromEnvFile():
+    env = os.getenv("env")
+    print(env)
+    load_dotenv(env)
+    url = os.getenv("AmazonURL")
+    usname = os.getenv("username")
+    pwValue = os.getenv("pw")
+
+    print("url",url)
    
 
 
