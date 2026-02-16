@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
-class logInPage:
+from allureWraper import BasePage
+class logInPage(BasePage):
     def __init__(self,page:Page):
         self.emailTextBox = page.locator("#ap_email_login")
         self.continueBtn = page.locator('//*[@aria-labelledby="continue-announce"]')

@@ -71,3 +71,14 @@ Reports:
 
 1. HTML
 2. ALLURE
+
+
+
+total steps:
+
+1. grabbing a lptop
+2. python installation
+3. git clone
+4. download dependency (reqiuierments.txt)
+5.playwright test execution
+6. ALLURE Reports

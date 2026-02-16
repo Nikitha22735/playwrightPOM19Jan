@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
-class resultsPage:
+from allureWraper import BasePage
+class resultsPage(BasePage):
     def __init__(self,page: Page):
         self.page = page
         self.resultsText = page.locator("//h2[text()='Results']")
