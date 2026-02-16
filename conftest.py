@@ -46,10 +46,10 @@ def resultsPageObj(page):
     return resultsPageObj
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture()
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless = False)
+        browser = p.chromium.launch()
         context = browser.new_context()
         page = context.new_page()
         yield page       #pausing point
