@@ -18,7 +18,7 @@ def navigateToEmailAddressPage(page):
 
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture()
 def loginToAmazon(page:Page):
     page.goto("https://www.amazon.in/")
     homePageObj = homePage(page)
