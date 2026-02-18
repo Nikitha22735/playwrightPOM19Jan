@@ -18,7 +18,7 @@ def navigateToEmailAddressPage(page):
 
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture()
 def loginToAmazon(page:Page):
     page.goto("https://www.amazon.in/")
     homePageObj = homePage(page)
@@ -49,7 +49,7 @@ def resultsPageObj(page):
 @pytest.fixture()
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         yield page       #pausing point
