@@ -49,7 +49,7 @@ def resultsPageObj(page):
 @pytest.fixture()
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         yield page       #pausing point
